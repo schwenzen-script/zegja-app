@@ -1,0 +1,33 @@
+/** All variables used within our application **/
+@import url("https://use.typekit.net/tac3sin.css");
+
+// font-families
+$font-primary: sofia-pro, sans-serif;
+$font-secundary: proxima-nova, sans-serif; 
+
+// sizes
+$font-size-25: 25px;
+$font-size-24: 24px;
+$font-size-20: 20px;
+$font-size-16: 16px;
+$font-size-14: 14px;
+$font-size-12: 12px;
+$font-size-10: 10px;
+
+// shadows
+$standard-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+
+// colors
+$brown: #8D7B69;
+$black: #3E3E3E;
+$gray: #BCBCBC;
+$white: #FFF;
+$red: #FF6969;
+$yellow: #F2C752;
+$green: #1EED9C;
+
+// gradients
+$brown-gradient: linear-gradient(360deg, rgba(82,82,82,1) 0%, rgba(141,123,105,1) 100%);
+$green-gradient: linear-gradient(360deg, #31D596 0%, #1EED9C 100%);
+$yellow-gradient: linear-gradient(360deg, #F2C752 0%, #FFBC00 100%);
+$red-gradient: linear-gradient(360deg, #FF6969 0%, #FF2929 100%);
