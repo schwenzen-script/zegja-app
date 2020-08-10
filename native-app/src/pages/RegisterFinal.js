@@ -49,7 +49,7 @@ export class RegisterFinalComponent extends React.Component {
         };
 
         const checkRegister = await this.props.registerUser(this.state.email, this.state.password, this.state.username);
-
+        console.log(checkRegister);
         if (!checkRegister.id) {
             this.setState({validationFull: true});
             return;

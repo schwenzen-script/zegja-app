@@ -31,7 +31,6 @@ const AuthProvider = ({children}) => {
 
     const login = async (email, password) => {
         const url = `${BASE}/users/login`;
-        console.log(url);
 
         const body = {email, password};
 

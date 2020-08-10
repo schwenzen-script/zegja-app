@@ -1,29 +1,27 @@
-/** Our empty layout...
+/** Our standard layout...
  * -----------------------------------------------
  * Used in following pages:
- *  - Login
- *  - Register
- *  - Info
- *  - SuccesRegister
- *  - Forget password
+ *  - Dashboard
  */
 
 import * as React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, ImageBackground } from 'react-native';
 
 import { useAuth } from '../services';
 
-export function EmptyLayout({children, navigation, authentication}) {
+import Path from '../static/images/path.svg';
+
+export function StandardLayout({children, navigation, authentication}) {
     const { user } = useAuth();
 
     return (
-        <EmptyLayoutComponent navigation={navigation} authentication={authentication} user={user}>
+        <StandardLayoutComponent navigation={navigation} authentication={authentication} user={user}>
             {children}
-        </EmptyLayoutComponent>
+        </StandardLayoutComponent>
     )
 };
 
-export class EmptyLayoutComponent extends React.Component {
+export class StandardLayoutComponent extends React.Component {
     constructor(props) {
         super(props);
     };
@@ -46,7 +44,8 @@ export class EmptyLayoutComponent extends React.Component {
 
     render() {
         return (
-             <View style={[styles.emptyContainer]}>
+             <View style={[styles.standardContainer]}>
+                 <ImageBackground source={Path} style={[styles.standardStart]} resizeMode="cover" />
                  {this.props.children}
              </View>
         );
@@ -54,13 +53,21 @@ export class EmptyLayoutComponent extends React.Component {
 };
 
 const styles = StyleSheet.create({
-    emptyContainer: {
+    standardContainer: {
         paddingHorizontal: 60,
         paddingTop: 120,
         paddingBottom: 30,
+        minHeight: "100vh",
         display: "flex",
         overflow: "hidden",
         justifyContent: "space-between",
         flex: 1,
+    },
+    standardStart: {
+        position: "absolute",
+        width: "100%",
+        height: "100vh",
+        left: 0,
+        top: 0,
     },
 });

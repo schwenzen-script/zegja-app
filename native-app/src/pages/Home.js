@@ -54,7 +54,13 @@ export class Home extends React.Component {
         };
 
         const checkLogin = await this.props.login(this.state.email, this.state.password);
-        console.log(checkLogin);
+
+        if (!checkLogin.id) {
+            this.setState({validationFull: true});
+            return;
+        };
+
+        this.props.navigation.navigate("Dashboard");
     };
 
     handleStates(name, value) {

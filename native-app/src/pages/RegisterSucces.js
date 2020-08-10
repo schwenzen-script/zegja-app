@@ -22,7 +22,7 @@ export class RegisterSuccesComponent extends React.Component {
 
     componentDidMount() {
         Font.loadAsync({
-            "fontRegular": require('../../../assets/fonts/Roboto-Regular.ttf'),
+            "fontRegular": require('../../assets/fonts/Roboto-Regular.ttf'),
         }).then(() => this.setState({fontsLoaded: true}));
     };
 
@@ -32,7 +32,7 @@ export class RegisterSuccesComponent extends React.Component {
 
     render() {
         return (
-             <EmptyLayout navigation={this.props.navigation} authentication={false}>
+             <EmptyLayout navigation={this.props.navigation} authentication={true}>
                  <View style={[styles.iconContainer]}>
                     <Image style={[styles.icon]} source={require("../static/icons/smile.png")} />
                  </View>

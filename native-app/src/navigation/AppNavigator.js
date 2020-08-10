@@ -2,7 +2,7 @@
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 
-import { ForgetPass, Info, HomeComponent, Register, RegisterFinal } from '../pages';
+import { ForgetPass, Info, HomeComponent, Register, RegisterFinal, RegisterSucces, Dashboard } from '../pages';
 
 const RootStack = createStackNavigator({
   Home: { screen: HomeComponent},
@@ -10,6 +10,8 @@ const RootStack = createStackNavigator({
   Info: { screen: Info },
   Register: { screen: Register },
   RegisterFinal: { screen: RegisterFinal },
+  RegisterSucces: { screen: RegisterSucces },
+  Dashboard: { screen: Dashboard }
 }, {
   headerMode: "none",
   initialRouteName: "Home",
