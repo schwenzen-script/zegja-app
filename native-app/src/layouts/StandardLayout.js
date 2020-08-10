@@ -6,6 +6,9 @@
 
 import * as React from 'react';
 import { View, StyleSheet, ImageBackground } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
+
+import { NavBar } from '../partials';
 
 import { useAuth } from '../services';
 
@@ -45,8 +48,13 @@ export class StandardLayoutComponent extends React.Component {
     render() {
         return (
              <View style={[styles.standardContainer]}>
-                 <ImageBackground source={Path} style={[styles.standardStart]} resizeMode="cover" />
-                 {this.props.children}
+                 <ScrollView>
+                     <View style={[styles.viewContainer]}>
+                        <ImageBackground source={Path} style={[styles.standardStart]} resizeMode="cover" />
+                        {this.props.children}
+                     </View>
+                 </ScrollView>
+                 <NavBar navigation={this.props.navigation}/>
              </View>
         );
     }
@@ -54,14 +62,16 @@ export class StandardLayoutComponent extends React.Component {
 
 const styles = StyleSheet.create({
     standardContainer: {
-        paddingHorizontal: 60,
+        flex: 1,
+    },
+    viewContainer: {
+        paddingHorizontal: 30,
         paddingTop: 120,
         paddingBottom: 30,
         minHeight: "100vh",
         display: "flex",
         overflow: "hidden",
         justifyContent: "space-between",
-        flex: 1,
     },
     standardStart: {
         position: "absolute",
