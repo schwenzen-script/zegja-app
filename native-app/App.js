@@ -4,13 +4,15 @@ import * as React from 'react';
 import 'react-native-gesture-handler';
 import AppNavigator from './src/navigation/AppNavigator';
 
-import { ApiProvider, AuthProvider } from './src/services';
+import { ApiProvider, AuthProvider, DateProvider } from './src/services';
 
 export default function App() {
   return (
     <AuthProvider>
       <ApiProvider>
-        <AppNavigator />
+        <DateProvider>
+          <AppNavigator />
+        </DateProvider>
       </ApiProvider>
     </AuthProvider>
   );

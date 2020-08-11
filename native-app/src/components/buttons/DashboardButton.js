@@ -3,6 +3,7 @@ import { StyleSheet, Text, Image } from 'react-native';
 
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Font from 'expo-font';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 // This button can be used within our dashboard
 export default class DashboardButton extends React.Component {
@@ -27,8 +28,10 @@ export default class DashboardButton extends React.Component {
         
         return (
             <LinearGradient style={[styles.dashboardButton]} colors={["rgba(82,82,82,1)", "rgba(141,123,105,1)"]}>
-                <Image style={[styles.image]} source={this.props.image}/>
-                <Text style={[styles.title]}>{this.props.title}</Text>
+                <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate(this.props.route)}>
+                    <Image style={[styles.image]} source={this.props.image}/>
+                    <Text style={[styles.title]}>{this.props.title}</Text>
+                </TouchableWithoutFeedback>
             </LinearGradient>
         );
     };

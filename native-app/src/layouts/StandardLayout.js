@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
         minHeight: "100vh",
         display: "flex",
         overflow: "hidden",
-        justifyContent: "space-between",
     },
     standardStart: {
         position: "absolute",

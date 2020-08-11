@@ -52,11 +52,13 @@ export class DashboardComponent extends React.Component {
                             image={Graph} 
                             title="Bekijk hier jouw grafieken!" 
                             route="Graph"
+                            navigation={this.props.navigation}
                         />
                         <DashboardButton 
                             image={Book}
                             title="Bekijk hier jouw dagboek!"
                             route="Dates"
+                            navigation={this.props.navigation}
                         />
                     </View>
                 </Container>
@@ -76,5 +78,6 @@ const styles = StyleSheet.create({
         flexWrap: "wrap",
         justifyContent: "space-between",
         alignItems: "center",
+        marginTop: 100,
     }
 });
