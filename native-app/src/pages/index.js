@@ -6,6 +6,7 @@ export * from './RegisterFinal';
 export * from './RegisterSucces';
 export * from './Dashboard';
 export * from './Dates';
+export * from './Date';
 
 export {
     ForgetPass,
